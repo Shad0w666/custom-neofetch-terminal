@@ -1,7 +1,7 @@
 {
 	"approved" : true,
 	"contentrating" : "Everyone",
-	"description" : "Main Features:\r\n- Extensive Customizability\r\n- Image to ASCII converter\r\n- Now playing support\r\n- Time-zone and Date tracking utilities\r\n\r\nCustomization Features:\r\n- Custom ASCII art resolution and colors\r\n- Dark, Light, and Custom themes\r\n- Time-zone clocks with labels and day progress bars\r\n- Date countdown and countup clocks with reoccurring support\r\n- OS Details section\r\n\r\nKnown Issues:\r\n- Rare: Times/Timers do not work at the start of the wallpaper\r\n↳ Fix: Reload wallpaper\r\n\r\nNotes:\r\n- ASCII Art best viewed on dark backgrounds\r\n- ASCII Art chooses the closest color available from in the theme\r\n- If you found an issue, I'll be glad to fix it :)\r\n\r\nMost Recent Change:\r\n• [Layout] Added option to swap ASCII Art and System Information positions\r\n• [Layout] Added option to hide system information\r\n• [System Information] Added ability to edit default property names and remove blank lines",
+	"description" : "Main Features:\n- Extensive Customizability\n- Image to ASCII converter\n- Now playing support\n- Time-zone and Date tracking utilities\n\nCustomization Features:\n- Custom ASCII art resolution and colors\n- Dark, Light, and Custom themes\n- Time-zone clocks with labels and day progress bars\n- Date countdown and countup clocks with reoccurring support\n- OS Details section\n\nKnown Issues:\n- Rare: Times/Timers do not work at the start of the wallpaper\n↳ Fix: Reload wallpaper\n\nNotes:\n- ASCII Art best viewed on dark backgrounds\n- ASCII Art chooses the closest color available from in the theme\n- If you found an issue, I'll be glad to fix it :)",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -17,8 +17,8 @@
 			},
 			"artbackground" : 
 			{
-				"index" : 55,
-				"order" : 155,
+				"index" : 57,
+				"order" : 157,
 				"text" : "Background",
 				"type" : "bool",
 				"value" : false
@@ -26,8 +26,8 @@
 			"artbackgroundcolor" : 
 			{
 				"condition" : "artbackground.value === true",
-				"index" : 56,
-				"order" : 156,
+				"index" : 58,
+				"order" : 158,
 				"text" : "Background Color",
 				"type" : "color",
 				"value" : "0.050980392156862744 0.06666666666666667 0.06274509803921569"
@@ -35,7 +35,7 @@
 			"ascii_color_mode" : 
 			{
 				"condition" : "coloredascii.value == true",
-				"index" : 53,
+				"index" : 55,
 				"options" : 
 				[
 					{
@@ -47,7 +47,7 @@
 						"value" : "image"
 					}
 				],
-				"order" : 153,
+				"order" : 155,
 				"text" : "Color Mode",
 				"type" : "combo",
 				"value" : "theme"
@@ -55,16 +55,16 @@
 			"ascii_static_color" : 
 			{
 				"condition" : "coloredascii.value == false",
-				"index" : 54,
-				"order" : 154,
+				"index" : 56,
+				"order" : 156,
 				"text" : "Static Color",
 				"type" : "color",
 				"value" : "0.8941176470588236 0.9294117647058824 0.9176470588235294"
 			},
 			"asciiart" : 
 			{
-				"index" : 48,
-				"order" : 148,
+				"index" : 50,
+				"order" : 150,
 				"text" : "ASCII Art",
 				"type" : "group",
 				"value" : ""
@@ -97,10 +97,10 @@
 			{
 				"fraction" : false,
 				"group" : "asciiart",
-				"index" : 50,
+				"index" : 52,
 				"max" : 300,
 				"min" : 50,
-				"order" : 150,
+				"order" : 152,
 				"step" : 25,
 				"text" : "Resolution (Higher = Lag)",
 				"type" : "slider",
@@ -108,8 +108,8 @@
 			},
 			"audio" : 
 			{
-				"index" : 44,
-				"order" : 144,
+				"index" : 45,
+				"order" : 145,
 				"text" : "Audio",
 				"type" : "group",
 				"value" : ""
@@ -117,8 +117,8 @@
 			"backgroundcolor" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 25,
-				"order" : 125,
+				"index" : 26,
+				"order" : 126,
 				"text" : "Background : <small>#0d1110</small>",
 				"type" : "color",
 				"value" : "0.050980392156862744 0.06666666666666667 0.06274509803921569"
@@ -126,8 +126,8 @@
 			"black" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 28,
-				"order" : 128,
+				"index" : 29,
+				"order" : 129,
 				"text" : "Black : #0d1110",
 				"type" : "color",
 				"value" : "0.050980392156862744 0.06666666666666667 0.06274509803921569"
@@ -135,8 +135,8 @@
 			"blue" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 36,
-				"order" : 136,
+				"index" : 37,
+				"order" : 137,
 				"text" : "Blue : #61afef",
 				"type" : "color",
 				"value" : "0.3803921568627451 0.6862745098039216 0.9372549019607843"
@@ -144,8 +144,8 @@
 			"bright-black" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 29,
-				"order" : 129,
+				"index" : 30,
+				"order" : 130,
 				"text" : "Bright Black : #5c6370",
 				"type" : "color",
 				"value" : "0.3607843137254902 0.38823529411764707 0.4392156862745098"
@@ -153,8 +153,8 @@
 			"bright-blue" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 37,
-				"order" : 137,
+				"index" : 38,
+				"order" : 138,
 				"text" : "Bright Blue : #82aaff",
 				"type" : "color",
 				"value" : "0.5098039215686274 0.6666666666666666 1"
@@ -162,8 +162,8 @@
 			"bright-cyan" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 41,
-				"order" : 141,
+				"index" : 42,
+				"order" : 142,
 				"text" : "Bright Cyan : #9aedfe",
 				"type" : "color",
 				"value" : "0.6039215686274509 0.9294117647058824 0.996078431372549"
@@ -171,8 +171,8 @@
 			"bright-green" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 33,
-				"order" : 133,
+				"index" : 34,
+				"order" : 134,
 				"text" : "Bright Green : #b1f2a7",
 				"type" : "color",
 				"value" : "0.6941176470588235 0.9490196078431372 0.6549019607843137"
@@ -180,8 +180,8 @@
 			"bright-magenta" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 39,
-				"order" : 139,
+				"index" : 40,
+				"order" : 140,
 				"text" : "Bright Magenta : #d4bfff",
 				"type" : "color",
 				"value" : "0.8313725490196079 0.7490196078431373 1"
@@ -189,8 +189,8 @@
 			"bright-red" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 31,
-				"order" : 131,
+				"index" : 32,
+				"order" : 132,
 				"text" : "Bright Red : #f28b82",
 				"type" : "color",
 				"value" : "0.9490196078431372 0.5450980392156862 0.5098039215686274"
@@ -198,8 +198,8 @@
 			"bright-white" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 43,
-				"order" : 143,
+				"index" : 44,
+				"order" : 144,
 				"text" : "Bright White : #ffffff",
 				"type" : "color",
 				"value" : "1 1 1"
@@ -207,8 +207,8 @@
 			"bright-yellow" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 35,
-				"order" : 135,
+				"index" : 36,
+				"order" : 136,
 				"text" : "Bright Yellow : #ffdd88",
 				"type" : "color",
 				"value" : "1 0.8666666666666667 0.5333333333333333"
@@ -216,8 +216,8 @@
 			"clabel0" : 
 			{
 				"condition" : "time0.value == true",
-				"index" : 61,
-				"order" : 161,
+				"index" : 63,
+				"order" : 163,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : "HOME"
@@ -225,8 +225,8 @@
 			"clabel1" : 
 			{
 				"condition" : "time1.value == true",
-				"index" : 64,
-				"order" : 164,
+				"index" : 66,
+				"order" : 166,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : "CEST"
@@ -234,8 +234,8 @@
 			"clabel2" : 
 			{
 				"condition" : "time2.value == true",
-				"index" : 67,
-				"order" : 167,
+				"index" : 69,
+				"order" : 169,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : "UTC"
@@ -243,8 +243,8 @@
 			"clabel3" : 
 			{
 				"condition" : "time3.value == true",
-				"index" : 70,
-				"order" : 170,
+				"index" : 72,
+				"order" : 172,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : "PST"
@@ -252,8 +252,8 @@
 			"clabel4" : 
 			{
 				"condition" : "time4.value == true",
-				"index" : 73,
-				"order" : 173,
+				"index" : 75,
+				"order" : 175,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : "IST"
@@ -261,24 +261,34 @@
 			"coloredascii" : 
 			{
 				"group" : "asciiart",
-				"index" : 52,
-				"order" : 152,
+				"index" : 54,
+				"order" : 154,
 				"text" : "Colored Art",
 				"type" : "bool",
 				"value" : true
 			},
 			"cpu" : 
 			{
-				"index" : 116,
-				"order" : 216,
+				"condition" : "cpu_dynamic === false",
+				"index" : 119,
+				"order" : 219,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : "[CPU]"
 			},
+			"cpu_dynamic" : 
+			{
+				"index" : 117,
+				"order" : 217,
+				"text" : "Dynamic CPU with performance",
+				"type" : "bool",
+				"value" : false
+			},
 			"cpu_property" : 
 			{
-				"index" : 115,
-				"order" : 215,
+				"condition" : "cpu_dynamic === false",
+				"index" : 118,
+				"order" : 218,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "CPU:"
@@ -286,8 +296,8 @@
 			"cyan" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 40,
-				"order" : 140,
+				"index" : 41,
+				"order" : 141,
 				"text" : "Cyan : #56b6c2",
 				"type" : "color",
 				"value" : "0.33725490196078434 0.7137254901960784 0.7607843137254902"
@@ -318,40 +328,60 @@
 			"defaultimage" : 
 			{
 				"group" : "appearance",
-				"index" : 49,
-				"order" : 149,
+				"index" : 51,
+				"order" : 151,
 				"text" : "Logo",
 				"type" : "file",
 				"value" : "default.png"
 			},
 			"disk" : 
 			{
-				"index" : 125,
-				"order" : 225,
+				"condition" : "disk_dynamic === false",
+				"index" : 131,
+				"order" : 231,
 				"text" : "Value",
-				"type" : "textinput",
-				"value" : "930G"
+				"type" : "Value",
+				"value" : "[disk]"
+			},
+			"disk_dynamic" : 
+			{
+				"index" : 129,
+				"order" : 229,
+				"text" : "Dynamic disk",
+				"type" : "bool",
+				"value" : false
 			},
 			"disk_property" : 
 			{
-				"index" : 124,
-				"order" : 224,
+				"condition" : "disk_dynamic === false",
+				"index" : 130,
+				"order" : 230,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "Disk:"
 			},
 			"gpu" : 
 			{
-				"index" : 119,
-				"order" : 219,
+				"condition" : "gpu_dynamic === false",
+				"index" : 123,
+				"order" : 223,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : "[GPU]"
 			},
+			"gpu_dynamic" : 
+			{
+				"index" : 121,
+				"order" : 221,
+				"text" : "Dynamic GPU",
+				"type" : "bool",
+				"value" : false
+			},
 			"gpu_property" : 
 			{
-				"index" : 118,
-				"order" : 218,
+				"condition" : "gpu_dynamic === false",
+				"index" : 122,
+				"order" : 222,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "GPU:"
@@ -359,8 +389,8 @@
 			"green" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 32,
-				"order" : 132,
+				"index" : 33,
+				"order" : 133,
 				"text" : "Green : #98c379",
 				"type" : "color",
 				"value" : "0.596078431372549 0.7647058823529411 0.4745098039215686"
@@ -393,8 +423,8 @@
 			"hostname" : 
 			{
 				"condition" : "",
-				"index" : 96,
-				"order" : 196,
+				"index" : 98,
+				"order" : 198,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : "[USER]"
@@ -402,64 +432,64 @@
 			"hostname_property" : 
 			{
 				"condition" : "",
-				"index" : 95,
-				"order" : 195,
+				"index" : 97,
+				"order" : 197,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "Hostname:"
 			},
 			"info-default-divider-1" : 
 			{
-				"index" : 100,
-				"order" : 200,
+				"index" : 102,
+				"order" : 202,
 				"text" : "Blank Line",
 				"type" : "bool",
 				"value" : true
 			},
 			"info-default-divider-2" : 
 			{
-				"index" : 113,
-				"order" : 213,
+				"index" : 115,
+				"order" : 215,
 				"text" : "Blank Line",
 				"type" : "bool",
 				"value" : true
 			},
 			"info-default-divider-3" : 
 			{
-				"index" : 126,
-				"order" : 226,
+				"index" : 132,
+				"order" : 232,
 				"text" : "Blank Line",
 				"type" : "bool",
 				"value" : true
 			},
 			"ip" : 
 			{
-				"index" : 99,
-				"order" : 199,
+				"index" : 101,
+				"order" : 201,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : "127.0.0.1"
 			},
 			"ip_property" : 
 			{
-				"index" : 98,
-				"order" : 198,
+				"index" : 100,
+				"order" : 200,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "IP:"
 			},
 			"kernel" : 
 			{
-				"index" : 106,
-				"order" : 206,
+				"index" : 108,
+				"order" : 208,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : "10.0.26100.4656"
 			},
 			"kernel_property" : 
 			{
-				"index" : 105,
-				"order" : 205,
+				"index" : 107,
+				"order" : 207,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "Kernel:"
@@ -589,6 +619,30 @@
 				"type" : "combo",
 				"value" : "right"
 			},
+			"layout_uptime_position" : 
+			{
+				"condition" : "showextras.value === true",
+				"index" : 23,
+				"options" : 
+				[
+					{
+						"label" : "Top",
+						"value" : "top"
+					},
+					{
+						"label" : "Center",
+						"value" : "center"
+					},
+					{
+						"label" : "Bottom",
+						"value" : "bottom"
+					}
+				],
+				"order" : 123,
+				"text" : "Uptime Position",
+				"type" : "combo",
+				"value" : "center"
+			},
 			"layout_vertical_order" : 
 			{
 				"condition" : "",
@@ -621,16 +675,16 @@
 			"magenta" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 38,
-				"order" : 138,
+				"index" : 39,
+				"order" : 139,
 				"text" : "Magenta : #c678dd",
 				"type" : "color",
 				"value" : "0.7764705882352941 0.47058823529411764 0.8666666666666667"
 			},
 			"newproperty" : 
 			{
-				"index" : 59,
-				"order" : 159,
+				"index" : 61,
+				"order" : 161,
 				"text" : "Enter hour offset of the timezone.<br>Use <code>{now}</code> to display current time<small><br>Use decimals for minute offset:<br>.25 (15min) | .5 (30min) | .75 (45min)</small>",
 				"type" : "text",
 				"value" : false
@@ -638,40 +692,50 @@
 			"newproperty1" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 27,
-				"order" : 127,
+				"index" : 28,
+				"order" : 128,
 				"text" : "<b>Note: </b> Changing colors below will affect ASCII art. ASCII art colors are picked by similarity",
 				"type" : "text",
 				"value" : false
 			},
 			"os" : 
 			{
-				"index" : 103,
-				"order" : 203,
+				"index" : 105,
+				"order" : 205,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : "Windows 11"
 			},
 			"os_property" : 
 			{
-				"index" : 102,
-				"order" : 202,
+				"index" : 104,
+				"order" : 204,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "OS:"
 			},
 			"ram" : 
 			{
-				"index" : 122,
-				"order" : 222,
+				"condition" : "ram_dynamic === false",
+				"index" : 127,
+				"order" : 227,
 				"text" : "Value",
 				"type" : "textinput",
-				"value" : "32G"
+				"value" : "[RAM]"
+			},
+			"ram_dynamic" : 
+			{
+				"index" : 125,
+				"order" : 225,
+				"text" : "Dynamic RAM",
+				"type" : "bool",
+				"value" : false
 			},
 			"ram_property" : 
 			{
-				"index" : 121,
-				"order" : 221,
+				"condition" : "ram_dynamic === false",
+				"index" : 126,
+				"order" : 226,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "RAM:"
@@ -679,24 +743,24 @@
 			"red" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 30,
-				"order" : 130,
+				"index" : 31,
+				"order" : 131,
 				"text" : "Red : #e06c75",
 				"type" : "color",
 				"value" : "0.8784313725490196 0.4235294117647059 0.4588235294117647"
 			},
 			"resolution" : 
 			{
-				"index" : 112,
-				"order" : 212,
+				"index" : 114,
+				"order" : 214,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : "{resolution}"
 			},
 			"resolution_property" : 
 			{
-				"index" : 111,
-				"order" : 211,
+				"index" : 113,
+				"order" : 213,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "Resolution"
@@ -706,10 +770,10 @@
 				"condition" : "coloredascii.value == true",
 				"fraction" : true,
 				"group" : "asciiart",
-				"index" : 57,
+				"index" : 59,
 				"max" : 5,
 				"min" : 0,
-				"order" : 157,
+				"order" : 159,
 				"precision" : 2,
 				"step" : 0.1,
 				"text" : "Saturation<small><br>0 = Grayscale<br>1 = Normal<br>> 1 = More Vivid</small>",
@@ -727,16 +791,16 @@
 			},
 			"shell" : 
 			{
-				"index" : 109,
-				"order" : 209,
+				"index" : 111,
+				"order" : 211,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : "PowerShell 7.4"
 			},
 			"shell_property" : 
 			{
-				"index" : 108,
-				"order" : 208,
+				"index" : 110,
+				"order" : 210,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : "Shell:"
@@ -780,20 +844,29 @@
 			"showextras" : 
 			{
 				"group" : "audio",
-				"index" : 45,
-				"order" : 145,
+				"index" : 46,
+				"order" : 146,
 				"text" : "Show Extra Sliders (Bass/Mid/Treble)",
 				"type" : "bool",
 				"value" : true
+			},
+			"showextrasuptimealert" : 
+			{
+				"condition" : "showextras.value == false",
+				"index" : 47,
+				"order" : 147,
+				"text" : "<small>Turn On for Uptime Positioning</small>",
+				"type" : "text",
+				"value" : false
 			},
 			"smoothness" : 
 			{
 				"fraction" : true,
 				"group" : "audio",
-				"index" : 46,
+				"index" : 48,
 				"max" : 0.9,
 				"min" : 0,
-				"order" : 146,
+				"order" : 148,
 				"precision" : 2,
 				"step" : 0.1,
 				"text" : "Smoothness",
@@ -811,8 +884,8 @@
 			},
 			"system_additional_information" : 
 			{
-				"index" : 127,
-				"order" : 227,
+				"index" : 133,
+				"order" : 233,
 				"text" : "Additional Information",
 				"type" : "bool",
 				"value" : true
@@ -820,8 +893,8 @@
 			"system_info_hidden_info" : 
 			{
 				"condition" : "hidesysteminformation.value === true",
-				"index" : 93,
-				"order" : 193,
+				"index" : 95,
+				"order" : 195,
 				"text" : "! System information hidden in Layout !",
 				"type" : "text",
 				"value" : false
@@ -829,8 +902,8 @@
 			"system_info_info" : 
 			{
 				"condition" : "",
-				"index" : 94,
-				"order" : 194,
+				"index" : 96,
+				"order" : 196,
 				"text" : "<i><small>These values act as placeholders and are meant to be changed</small></i><br /><br />Use <code>{resolution}</code> for automatic resolution detection",
 				"type" : "text",
 				"value" : false
@@ -838,8 +911,8 @@
 			"system_stats_divider-0" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 110,
-				"order" : 210,
+				"index" : 112,
+				"order" : 212,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
@@ -847,8 +920,8 @@
 			"system_stats_divider-1" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 97,
-				"order" : 197,
+				"index" : 99,
+				"order" : 199,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
@@ -856,49 +929,13 @@
 			"system_stats_divider-10" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 157,
-				"order" : 257,
+				"index" : 164,
+				"order" : 264,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
 			},
-			"system_stats_divider-2" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 133,
-				"order" : 233,
-				"text" : "---------",
-				"type" : "text",
-				"value" : false
-			},
-			"system_stats_divider-3" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 136,
-				"order" : 236,
-				"text" : "---------",
-				"type" : "text",
-				"value" : false
-			},
-			"system_stats_divider-4" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 139,
-				"order" : 239,
-				"text" : "---------",
-				"type" : "text",
-				"value" : false
-			},
-			"system_stats_divider-5" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 142,
-				"order" : 242,
-				"text" : "---------",
-				"type" : "text",
-				"value" : false
-			},
-			"system_stats_divider-6" : 
+			"system_stats_divider-11" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 145,
@@ -907,11 +944,56 @@
 				"type" : "text",
 				"value" : false
 			},
+			"system_stats_divider-2" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 139,
+				"order" : 239,
+				"text" : "---------",
+				"type" : "text",
+				"value" : false
+			},
+			"system_stats_divider-3" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 142,
+				"order" : 242,
+				"text" : "---------",
+				"type" : "text",
+				"value" : false
+			},
+			"system_stats_divider-4" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 146,
+				"order" : 246,
+				"text" : "---------",
+				"type" : "text",
+				"value" : false
+			},
+			"system_stats_divider-5" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 149,
+				"order" : 249,
+				"text" : "---------",
+				"type" : "text",
+				"value" : false
+			},
+			"system_stats_divider-6" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 152,
+				"order" : 252,
+				"text" : "---------",
+				"type" : "text",
+				"value" : false
+			},
 			"system_stats_divider-7" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 148,
-				"order" : 248,
+				"index" : 155,
+				"order" : 255,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
@@ -919,8 +1001,8 @@
 			"system_stats_divider-8" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 151,
-				"order" : 251,
+				"index" : 158,
+				"order" : 258,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
@@ -928,13 +1010,31 @@
 			"system_stats_divider-9" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 154,
-				"order" : 254,
+				"index" : 161,
+				"order" : 261,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
 			},
 			"system_stats_divider-main-1" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 124,
+				"order" : 224,
+				"text" : "---------",
+				"type" : "text",
+				"value" : false
+			},
+			"system_stats_divider-main-2" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 128,
+				"order" : 228,
+				"text" : "---------",
+				"type" : "text",
+				"value" : false
+			},
+			"system_stats_divider-main-3" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 120,
@@ -943,29 +1043,11 @@
 				"type" : "text",
 				"value" : false
 			},
-			"system_stats_divider-main-2" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 123,
-				"order" : 223,
-				"text" : "---------",
-				"type" : "text",
-				"value" : false
-			},
-			"system_stats_divider-main-3" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 117,
-				"order" : 217,
-				"text" : "---------",
-				"type" : "text",
-				"value" : false
-			},
 			"system_stats_divider-main-4" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 114,
-				"order" : 214,
+				"index" : 116,
+				"order" : 216,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
@@ -973,8 +1055,8 @@
 			"system_stats_divider-main-5" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 107,
-				"order" : 207,
+				"index" : 109,
+				"order" : 209,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
@@ -982,8 +1064,8 @@
 			"system_stats_divider-main-6" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 104,
-				"order" : 204,
+				"index" : 106,
+				"order" : 206,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
@@ -991,8 +1073,8 @@
 			"system_stats_divider-main-7" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 101,
-				"order" : 201,
+				"index" : 103,
+				"order" : 203,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
@@ -1000,49 +1082,13 @@
 			"system_stats_divider-main-8" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 130,
-				"order" : 230,
+				"index" : 136,
+				"order" : 236,
 				"text" : "---------",
 				"type" : "text",
 				"value" : false
 			},
 			"system_stats_prop-1" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 128,
-				"order" : 228,
-				"text" : "Property",
-				"type" : "textinput",
-				"value" : ""
-			},
-			"system_stats_prop-10" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 155,
-				"order" : 255,
-				"text" : "Property",
-				"type" : "textinput",
-				"value" : ""
-			},
-			"system_stats_prop-11" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 158,
-				"order" : 258,
-				"text" : "Property",
-				"type" : "textinput",
-				"value" : ""
-			},
-			"system_stats_prop-2" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 131,
-				"order" : 231,
-				"text" : "Property",
-				"type" : "textinput",
-				"value" : ""
-			},
-			"system_stats_prop-3" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 134,
@@ -1051,7 +1097,25 @@
 				"type" : "textinput",
 				"value" : ""
 			},
-			"system_stats_prop-4" : 
+			"system_stats_prop-10" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 162,
+				"order" : 262,
+				"text" : "Property",
+				"type" : "textinput",
+				"value" : ""
+			},
+			"system_stats_prop-11" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 165,
+				"order" : 265,
+				"text" : "Property",
+				"type" : "textinput",
+				"value" : ""
+			},
+			"system_stats_prop-2" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 137,
@@ -1060,7 +1124,7 @@
 				"type" : "textinput",
 				"value" : ""
 			},
-			"system_stats_prop-5" : 
+			"system_stats_prop-3" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 140,
@@ -1069,7 +1133,7 @@
 				"type" : "textinput",
 				"value" : ""
 			},
-			"system_stats_prop-6" : 
+			"system_stats_prop-4" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 143,
@@ -1078,11 +1142,29 @@
 				"type" : "textinput",
 				"value" : ""
 			},
+			"system_stats_prop-5" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 147,
+				"order" : 247,
+				"text" : "Property",
+				"type" : "textinput",
+				"value" : ""
+			},
+			"system_stats_prop-6" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 150,
+				"order" : 250,
+				"text" : "Property",
+				"type" : "textinput",
+				"value" : ""
+			},
 			"system_stats_prop-7" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 146,
-				"order" : 246,
+				"index" : 153,
+				"order" : 253,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : ""
@@ -1090,8 +1172,8 @@
 			"system_stats_prop-8" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 149,
-				"order" : 249,
+				"index" : 156,
+				"order" : 256,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : ""
@@ -1099,49 +1181,13 @@
 			"system_stats_prop-9" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 152,
-				"order" : 252,
+				"index" : 159,
+				"order" : 259,
 				"text" : "Property",
 				"type" : "textinput",
 				"value" : ""
 			},
 			"system_stats_value-1" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 129,
-				"order" : 229,
-				"text" : "Value",
-				"type" : "textinput",
-				"value" : ""
-			},
-			"system_stats_value-10" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 156,
-				"order" : 256,
-				"text" : "Value",
-				"type" : "textinput",
-				"value" : ""
-			},
-			"system_stats_value-11" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 159,
-				"order" : 259,
-				"text" : "Value",
-				"type" : "textinput",
-				"value" : ""
-			},
-			"system_stats_value-2" : 
-			{
-				"condition" : "system_additional_information.value === true",
-				"index" : 132,
-				"order" : 232,
-				"text" : "Value",
-				"type" : "textinput",
-				"value" : ""
-			},
-			"system_stats_value-3" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 135,
@@ -1150,7 +1196,25 @@
 				"type" : "textinput",
 				"value" : ""
 			},
-			"system_stats_value-4" : 
+			"system_stats_value-10" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 163,
+				"order" : 263,
+				"text" : "Value",
+				"type" : "textinput",
+				"value" : ""
+			},
+			"system_stats_value-11" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 166,
+				"order" : 266,
+				"text" : "Value",
+				"type" : "textinput",
+				"value" : ""
+			},
+			"system_stats_value-2" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 138,
@@ -1159,7 +1223,7 @@
 				"type" : "textinput",
 				"value" : ""
 			},
-			"system_stats_value-5" : 
+			"system_stats_value-3" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 141,
@@ -1168,7 +1232,7 @@
 				"type" : "textinput",
 				"value" : ""
 			},
-			"system_stats_value-6" : 
+			"system_stats_value-4" : 
 			{
 				"condition" : "system_additional_information.value === true",
 				"index" : 144,
@@ -1177,11 +1241,29 @@
 				"type" : "textinput",
 				"value" : ""
 			},
+			"system_stats_value-5" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 148,
+				"order" : 248,
+				"text" : "Value",
+				"type" : "textinput",
+				"value" : ""
+			},
+			"system_stats_value-6" : 
+			{
+				"condition" : "system_additional_information.value === true",
+				"index" : 151,
+				"order" : 251,
+				"text" : "Value",
+				"type" : "textinput",
+				"value" : ""
+			},
 			"system_stats_value-7" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 147,
-				"order" : 247,
+				"index" : 154,
+				"order" : 254,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : ""
@@ -1189,8 +1271,8 @@
 			"system_stats_value-8" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 150,
-				"order" : 250,
+				"index" : 157,
+				"order" : 257,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : ""
@@ -1198,16 +1280,16 @@
 			"system_stats_value-9" : 
 			{
 				"condition" : "system_additional_information.value === true",
-				"index" : 153,
-				"order" : 253,
+				"index" : 160,
+				"order" : 260,
 				"text" : "Value",
 				"type" : "textinput",
 				"value" : ""
 			},
 			"systeminformation" : 
 			{
-				"index" : 92,
-				"order" : 192,
+				"index" : 94,
+				"order" : 194,
 				"text" : "System Information",
 				"type" : "group",
 				"value" : ""
@@ -1215,8 +1297,8 @@
 			"tdate0" : 
 			{
 				"condition" : "timer0.value == true",
-				"index" : 79,
-				"order" : 179,
+				"index" : 81,
+				"order" : 181,
 				"text" : "Date",
 				"type" : "textinput",
 				"value" : "1/1"
@@ -1224,8 +1306,8 @@
 			"tdate1" : 
 			{
 				"condition" : "timer1.value == true",
-				"index" : 82,
-				"order" : 182,
+				"index" : 84,
+				"order" : 184,
 				"text" : "Date",
 				"type" : "textinput",
 				"value" : "1/1/2000"
@@ -1233,8 +1315,8 @@
 			"tdate2" : 
 			{
 				"condition" : "timer2.value == true",
-				"index" : 85,
-				"order" : 185,
+				"index" : 87,
+				"order" : 187,
 				"text" : "Date",
 				"type" : "textinput",
 				"value" : ""
@@ -1242,8 +1324,8 @@
 			"tdate3" : 
 			{
 				"condition" : "timer3.value == true",
-				"index" : 88,
-				"order" : 188,
+				"index" : 90,
+				"order" : 190,
 				"text" : "Date",
 				"type" : "textinput",
 				"value" : ""
@@ -1251,8 +1333,8 @@
 			"tdate4" : 
 			{
 				"condition" : "timer4.value == true",
-				"index" : 91,
-				"order" : 191,
+				"index" : 93,
+				"order" : 193,
 				"text" : "Date",
 				"type" : "textinput",
 				"value" : ""
@@ -1260,8 +1342,8 @@
 			"textcolor" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 26,
-				"order" : 126,
+				"index" : 27,
+				"order" : 127,
 				"text" : "Text Color : <small>#e4edea</small>",
 				"type" : "color",
 				"value" : "0.8941176470588236 0.9294117647058824 0.9176470588235294"
@@ -1282,7 +1364,7 @@
 			},
 			"theme" : 
 			{
-				"index" : 24,
+				"index" : 25,
 				"options" : 
 				[
 					{
@@ -1298,55 +1380,55 @@
 						"value" : "custom"
 					}
 				],
-				"order" : 124,
+				"order" : 125,
 				"text" : "Theme",
 				"type" : "combo",
 				"value" : "dark"
 			},
 			"themegroup" : 
 			{
-				"index" : 23,
-				"order" : 123,
+				"index" : 24,
+				"order" : 124,
 				"text" : "Theme",
 				"type" : "group",
 				"value" : ""
 			},
 			"time0" : 
 			{
-				"index" : 60,
-				"order" : 160,
+				"index" : 62,
+				"order" : 162,
 				"text" : "Time-0",
 				"type" : "bool",
 				"value" : true
 			},
 			"time1" : 
 			{
-				"index" : 63,
-				"order" : 163,
+				"index" : 65,
+				"order" : 165,
 				"text" : "Time-1",
 				"type" : "bool",
 				"value" : true
 			},
 			"time2" : 
 			{
-				"index" : 66,
-				"order" : 166,
+				"index" : 68,
+				"order" : 168,
 				"text" : "Time-2",
 				"type" : "bool",
 				"value" : true
 			},
 			"time3" : 
 			{
-				"index" : 69,
-				"order" : 169,
+				"index" : 71,
+				"order" : 171,
 				"text" : "Time-3",
 				"type" : "bool",
 				"value" : true
 			},
 			"time4" : 
 			{
-				"index" : 72,
-				"order" : 172,
+				"index" : 74,
+				"order" : 174,
 				"text" : "Time-4",
 				"type" : "bool",
 				"value" : true
@@ -1372,72 +1454,72 @@
 			},
 			"timer0" : 
 			{
-				"index" : 77,
-				"order" : 177,
+				"index" : 79,
+				"order" : 179,
 				"text" : "Timer-0",
 				"type" : "bool",
 				"value" : true
 			},
 			"timer1" : 
 			{
-				"index" : 80,
-				"order" : 180,
+				"index" : 82,
+				"order" : 182,
 				"text" : "Timer-1",
 				"type" : "bool",
 				"value" : true
 			},
 			"timer2" : 
 			{
-				"index" : 83,
-				"order" : 183,
+				"index" : 85,
+				"order" : 185,
 				"text" : "Timer-2",
 				"type" : "bool",
 				"value" : false
 			},
 			"timer3" : 
 			{
-				"index" : 86,
-				"order" : 186,
+				"index" : 88,
+				"order" : 188,
 				"text" : "Timer-3",
 				"type" : "bool",
 				"value" : false
 			},
 			"timer4" : 
 			{
-				"index" : 89,
-				"order" : 189,
+				"index" : 91,
+				"order" : 191,
 				"text" : "Timer-4",
 				"type" : "bool",
 				"value" : false
 			},
 			"timers" : 
 			{
-				"index" : 75,
-				"order" : 175,
+				"index" : 77,
+				"order" : 177,
 				"text" : "Timers",
 				"type" : "group",
 				"value" : ""
 			},
 			"timerstext" : 
 			{
-				"index" : 76,
-				"order" : 176,
+				"index" : 78,
+				"order" : 178,
 				"text" : "Use DD/MM/YYYY for countdowns<br>or DD/MM for repeated events",
 				"type" : "text",
 				"value" : false
 			},
 			"times" : 
 			{
-				"index" : 58,
-				"order" : 158,
+				"index" : 60,
+				"order" : 160,
 				"text" : "Times",
 				"type" : "group",
 				"value" : ""
 			},
 			"timezone0" : 
 			{
-				"index" : 62,
-				"order" : 162,
+				"index" : 64,
+				"order" : 164,
 				"text" : "Timezone",
 				"type" : "textinput",
 				"value" : "{now}"
@@ -1445,8 +1527,8 @@
 			"timezone1" : 
 			{
 				"condition" : "time1.value == true",
-				"index" : 65,
-				"order" : 165,
+				"index" : 67,
+				"order" : 167,
 				"text" : "Timezone",
 				"type" : "textinput",
 				"value" : "2"
@@ -1454,8 +1536,8 @@
 			"timezone2" : 
 			{
 				"condition" : "time2.value == true",
-				"index" : 68,
-				"order" : 168,
+				"index" : 70,
+				"order" : 170,
 				"text" : "Timezone",
 				"type" : "textinput",
 				"value" : "0"
@@ -1463,8 +1545,8 @@
 			"timezone3" : 
 			{
 				"condition" : "time3.value == true",
-				"index" : 71,
-				"order" : 171,
+				"index" : 73,
+				"order" : 173,
 				"text" : "Timezone",
 				"type" : "textinput",
 				"value" : "-7"
@@ -1472,8 +1554,8 @@
 			"timezone4" : 
 			{
 				"condition" : "time4.value == true",
-				"index" : 74,
-				"order" : 174,
+				"index" : 76,
+				"order" : 176,
 				"text" : "Timezone",
 				"type" : "textinput",
 				"value" : "5.5"
@@ -1481,8 +1563,8 @@
 			"tlabel0" : 
 			{
 				"condition" : "timer0.value == true",
-				"index" : 78,
-				"order" : 178,
+				"index" : 80,
+				"order" : 180,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : "NEW_YEAR"
@@ -1490,8 +1572,8 @@
 			"tlabel1" : 
 			{
 				"condition" : "timer1.value == true",
-				"index" : 81,
-				"order" : 181,
+				"index" : 83,
+				"order" : 183,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : "YEAR_2000"
@@ -1499,8 +1581,8 @@
 			"tlabel2" : 
 			{
 				"condition" : "timer2.value == true",
-				"index" : 84,
-				"order" : 184,
+				"index" : 86,
+				"order" : 186,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : ""
@@ -1508,8 +1590,8 @@
 			"tlabel3" : 
 			{
 				"condition" : "timer3.value == true",
-				"index" : 87,
-				"order" : 187,
+				"index" : 89,
+				"order" : 189,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : ""
@@ -1517,8 +1599,8 @@
 			"tlabel4" : 
 			{
 				"condition" : "timer4.value == true",
-				"index" : 90,
-				"order" : 190,
+				"index" : 92,
+				"order" : 192,
 				"text" : "Label",
 				"type" : "textinput",
 				"value" : ""
@@ -1526,8 +1608,8 @@
 			"usemediaart" : 
 			{
 				"group" : "appearance",
-				"index" : 51,
-				"order" : 151,
+				"index" : 53,
+				"order" : 153,
 				"text" : "Use Media Art",
 				"type" : "bool",
 				"value" : true
@@ -1535,10 +1617,10 @@
 			"volume_sensitivity" : 
 			{
 				"fraction" : true,
-				"index" : 47,
+				"index" : 49,
 				"max" : 10,
 				"min" : 0.1,
-				"order" : 147,
+				"order" : 149,
 				"precision" : 2,
 				"step" : 0.1,
 				"text" : "Sensitivity",
@@ -1548,8 +1630,8 @@
 			"white" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 42,
-				"order" : 142,
+				"index" : 43,
+				"order" : 143,
 				"text" : "White : #e4edea",
 				"type" : "color",
 				"value" : "0.8941176470588236 0.9294117647058824 0.9176470588235294"
@@ -1557,8 +1639,8 @@
 			"yellow" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 34,
-				"order" : 134,
+				"index" : 35,
+				"order" : 135,
 				"text" : "Yellow : #e5c07b",
 				"type" : "color",
 				"value" : "0.8980392156862745 0.7529411764705882 0.4823529411764706"
@@ -1571,10 +1653,8 @@
 	"ratingviolence" : "none",
 	"supportsAudio" : true,
 	"tags" : [ "Retro" ],
-	"title" : "Neofetch Terminal",
-	"type" : "Web",
-	"version" : 11,
-	"visibility" : "public",
-	"workshopid" : "3528316973",
-	"workshopurl" : "steam://url/CommunityFilePage/3528316973"
+	"title" : "Neofetch Terminal Custom",
+	"type" : "web",
+	"version" : 1,
+	"visibility" : "private"
 }

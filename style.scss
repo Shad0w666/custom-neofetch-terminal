@@ -221,3 +221,21 @@ body {
 	display: grid;
 	grid-template-columns: 50ch 50ch;
 }
+
+.uptime-panel {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	
+    &.top {
+        justify-content: flex-start;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+
+    &.bottom {
+        justify-content: flex-end;
+    }
+}

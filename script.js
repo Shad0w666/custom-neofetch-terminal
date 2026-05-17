@@ -18,6 +18,7 @@ const userSettings = {
 		alignment: "top", // top | center | bottom | custom
 		order: "time", // time | overview
 		audioLocation: "overview", // time | center | overview
+		uptimePosition: "center", // top | center | bottom
 
 		margin: {
 			top: undefined,
@@ -95,9 +96,31 @@ function waitForUptimeElement() {
 		updateClocks();
 		updateTimers();
 		updateDate();
+		updateLiveHardware();
 	}, 1000);
 }
 
+async function updateLiveHardware() {
+    try {
+		const response = await fetch('http://127.0.0.1:5000/performance');
+        const data = await response.json();
+        if (!data || !data.hwinfo) return;
+
+		const hw = data.hwinfo.reduce((acc, curr) => { acc[curr.label] = curr.value; return acc; }, {});
+		const hwColor = data.hwinfo.reduce((acc, curr) => { acc[curr.label] = curr.color; return acc; }, {});
+        const ps = data.psutil || {};
+
+		let cpuName = "Unknown CPU";
+        const cpuSensor = data.hwinfo.find(i => i.sensor && i.sensor.includes("CPU [#"));
+        if (cpuSensor) cpuName = cpuSensor.sensor.split(": ")[1] || cpuName;
+
+        let gpuName = "Unknown GPU";
+        const gpuSensor = data.hwinfo.find(i => i.sensor && (i.sensor.includes("dGPU [#") || i.sensor.includes("GPU [#")));
+        if (gpuSensor) gpuName = gpuSensor.sensor.split(": ")[1] || gpuName;
+	} 
+	catch (e) {
+		}
+}
 requestAnimationFrame(waitForUptimeElement);
 
 window.wallpaperPropertyListener = {
@@ -270,6 +293,11 @@ window.wallpaperPropertyListener = {
 
 		if (properties.layout_custom_margin) {
 			userSettings.layout.customMargins = properties.layout_custom_margin.value;
+			shouldUpdateLayout = true;
+		}
+
+		if (properties.layout_uptime_position) {
+			userSettings.layout.uptimePosition = properties.layout_uptime_position.value;
 			shouldUpdateLayout = true;
 		}
 
@@ -476,6 +504,7 @@ function updateLayout() {
 	const audioOverviewJump = document.getElementById("audio-overview-jump");
 
 	const timePanelEl = document.querySelector(".time-terminal");
+	const uptimePanel = document.querySelector(".uptime-panel");
 
 	// ---
 
@@ -553,6 +582,21 @@ function updateLayout() {
 		audioTerminalJump.appendChild(audioPanel);
 	} else {
 		audioOverviewJump.appendChild(audioPanel);
+	}
+
+	const uptimePosition = userSettings.layout.uptimePosition;
+	if (uptimePosition === "top") {
+		uptimePanel.classList.add("top");
+		uptimePanel.classList.remove("center");
+		uptimePanel.classList.remove("bottom");
+	} else if (uptimePosition === "center") {
+		uptimePanel.classList.remove("top");
+		uptimePanel.classList.add("center");
+		uptimePanel.classList.remove("bottom");
+	} else {
+		uptimePanel.classList.remove("top");
+		uptimePanel.classList.remove("center");
+		uptimePanel.classList.add("bottom");
 	}
 
 	// ---

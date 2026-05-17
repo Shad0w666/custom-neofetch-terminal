@@ -186,4 +186,19 @@ body.right {
 .load-information {
   display: grid;
   grid-template-columns: 50ch 50ch;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.uptime-panel {
+	display: flex;
+	flex-direction: column;
+}
+.uptime-panel.top {
+  justify-content: flex-start;
+}
+.uptime-panel.center {
+  justify-content: center;
+}
+.uptime-panel.bottom {
+  justify-content: flex-end;
+}
+/*# sourceMappingURL=style.css.map */
