@@ -108,8 +108,8 @@
 			},
 			"audio" : 
 			{
-				"index" : 45,
-				"order" : 145,
+				"index" : 46,
+				"order" : 146,
 				"text" : "Audio",
 				"type" : "group",
 				"value" : ""
@@ -117,8 +117,8 @@
 			"backgroundcolor" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 26,
-				"order" : 126,
+				"index" : 27,
+				"order" : 127,
 				"text" : "Background : <small>#0d1110</small>",
 				"type" : "color",
 				"value" : "0.050980392156862744 0.06666666666666667 0.06274509803921569"
@@ -126,8 +126,8 @@
 			"black" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 29,
-				"order" : 129,
+				"index" : 30,
+				"order" : 130,
 				"text" : "Black : #0d1110",
 				"type" : "color",
 				"value" : "0.050980392156862744 0.06666666666666667 0.06274509803921569"
@@ -135,8 +135,8 @@
 			"blue" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 37,
-				"order" : 137,
+				"index" : 38,
+				"order" : 138,
 				"text" : "Blue : #61afef",
 				"type" : "color",
 				"value" : "0.3803921568627451 0.6862745098039216 0.9372549019607843"
@@ -144,8 +144,8 @@
 			"bright-black" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 30,
-				"order" : 130,
+				"index" : 31,
+				"order" : 131,
 				"text" : "Bright Black : #5c6370",
 				"type" : "color",
 				"value" : "0.3607843137254902 0.38823529411764707 0.4392156862745098"
@@ -153,8 +153,8 @@
 			"bright-blue" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 38,
-				"order" : 138,
+				"index" : 39,
+				"order" : 139,
 				"text" : "Bright Blue : #82aaff",
 				"type" : "color",
 				"value" : "0.5098039215686274 0.6666666666666666 1"
@@ -162,8 +162,8 @@
 			"bright-cyan" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 42,
-				"order" : 142,
+				"index" : 43,
+				"order" : 143,
 				"text" : "Bright Cyan : #9aedfe",
 				"type" : "color",
 				"value" : "0.6039215686274509 0.9294117647058824 0.996078431372549"
@@ -171,8 +171,8 @@
 			"bright-green" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 34,
-				"order" : 134,
+				"index" : 35,
+				"order" : 135,
 				"text" : "Bright Green : #b1f2a7",
 				"type" : "color",
 				"value" : "0.6941176470588235 0.9490196078431372 0.6549019607843137"
@@ -180,8 +180,8 @@
 			"bright-magenta" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 40,
-				"order" : 140,
+				"index" : 41,
+				"order" : 141,
 				"text" : "Bright Magenta : #d4bfff",
 				"type" : "color",
 				"value" : "0.8313725490196079 0.7490196078431373 1"
@@ -189,8 +189,8 @@
 			"bright-red" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 32,
-				"order" : 132,
+				"index" : 33,
+				"order" : 133,
 				"text" : "Bright Red : #f28b82",
 				"type" : "color",
 				"value" : "0.9490196078431372 0.5450980392156862 0.5098039215686274"
@@ -198,8 +198,8 @@
 			"bright-white" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 44,
-				"order" : 144,
+				"index" : 45,
+				"order" : 145,
 				"text" : "Bright White : #ffffff",
 				"type" : "color",
 				"value" : "1 1 1"
@@ -207,8 +207,8 @@
 			"bright-yellow" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 36,
-				"order" : 136,
+				"index" : 37,
+				"order" : 137,
 				"text" : "Bright Yellow : #ffdd88",
 				"type" : "color",
 				"value" : "1 0.8666666666666667 0.5333333333333333"
@@ -296,8 +296,8 @@
 			"cyan" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 41,
-				"order" : 141,
+				"index" : 42,
+				"order" : 142,
 				"text" : "Cyan : #56b6c2",
 				"type" : "color",
 				"value" : "0.33725490196078434 0.7137254901960784 0.7607843137254902"
@@ -389,8 +389,8 @@
 			"green" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 33,
-				"order" : 133,
+				"index" : 34,
+				"order" : 134,
 				"text" : "Green : #98c379",
 				"type" : "color",
 				"value" : "0.596078431372549 0.7647058823529411 0.4745098039215686"
@@ -643,6 +643,22 @@
 				"type" : "combo",
 				"value" : "center"
 			},
+			"layout_uptime_position_off" : 
+			{
+				"condition" : "showextras.value === false",
+				"index" : 24,
+				"options" : 
+				[
+					{
+						"label" : "",
+						"value" : ""
+					}
+				],
+				"order" : 124,
+				"text" : "Uptime Position",
+				"type" : "combo",
+				"value" : ""
+			},
 			"layout_vertical_order" : 
 			{
 				"condition" : "",
@@ -675,8 +691,8 @@
 			"magenta" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 39,
-				"order" : 139,
+				"index" : 40,
+				"order" : 140,
 				"text" : "Magenta : #c678dd",
 				"type" : "color",
 				"value" : "0.7764705882352941 0.47058823529411764 0.8666666666666667"
@@ -692,8 +708,8 @@
 			"newproperty1" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 28,
-				"order" : 128,
+				"index" : 29,
+				"order" : 129,
 				"text" : "<b>Note: </b> Changing colors below will affect ASCII art. ASCII art colors are picked by similarity",
 				"type" : "text",
 				"value" : false
@@ -743,8 +759,8 @@
 			"red" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 31,
-				"order" : 131,
+				"index" : 32,
+				"order" : 132,
 				"text" : "Red : #e06c75",
 				"type" : "color",
 				"value" : "0.8784313725490196 0.4235294117647059 0.4588235294117647"
@@ -844,20 +860,11 @@
 			"showextras" : 
 			{
 				"group" : "audio",
-				"index" : 46,
-				"order" : 146,
-				"text" : "Show Extra Sliders (Bass/Mid/Treble)",
-				"type" : "bool",
-				"value" : true
-			},
-			"showextrasuptimealert" : 
-			{
-				"condition" : "showextras.value == false",
 				"index" : 47,
 				"order" : 147,
-				"text" : "<small>Turn On for Uptime Positioning</small>",
-				"type" : "text",
-				"value" : false
+				"text" : "Show Extra Sliders (Bass/Mid/Treble)<small><br>Leave ON for Uptime Positioning</small>",
+				"type" : "bool",
+				"value" : true
 			},
 			"smoothness" : 
 			{
@@ -1342,8 +1349,8 @@
 			"textcolor" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 27,
-				"order" : 127,
+				"index" : 28,
+				"order" : 128,
 				"text" : "Text Color : <small>#e4edea</small>",
 				"type" : "color",
 				"value" : "0.8941176470588236 0.9294117647058824 0.9176470588235294"
@@ -1364,7 +1371,7 @@
 			},
 			"theme" : 
 			{
-				"index" : 25,
+				"index" : 26,
 				"options" : 
 				[
 					{
@@ -1380,15 +1387,15 @@
 						"value" : "custom"
 					}
 				],
-				"order" : 125,
+				"order" : 126,
 				"text" : "Theme",
 				"type" : "combo",
 				"value" : "dark"
 			},
 			"themegroup" : 
 			{
-				"index" : 24,
-				"order" : 124,
+				"index" : 25,
+				"order" : 125,
 				"text" : "Theme",
 				"type" : "group",
 				"value" : ""
@@ -1630,8 +1637,8 @@
 			"white" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 43,
-				"order" : 143,
+				"index" : 44,
+				"order" : 144,
 				"text" : "White : #e4edea",
 				"type" : "color",
 				"value" : "0.8941176470588236 0.9294117647058824 0.9176470588235294"
@@ -1639,8 +1646,8 @@
 			"yellow" : 
 			{
 				"condition" : "theme.value === \"custom\"",
-				"index" : 35,
-				"order" : 135,
+				"index" : 36,
+				"order" : 136,
 				"text" : "Yellow : #e5c07b",
 				"type" : "color",
 				"value" : "0.8980392156862745 0.7529411764705882 0.4823529411764706"
