@@ -64,13 +64,18 @@ const userSettings = {
 		{ enabled: true, label: "", date: "" },
 		{ enabled: true, label: "", date: "" },
 	],
-	systemInfo: {},
+	systemInfo: {
+        cpu_dynamic: true,
+        gpu_dynamic: true,
+        ram_dynamic: true,
+        disk_dynamic: true
+    },
 	customSystemInfo: {
 		enabled: true,
 	},
 };
 
-const systemInfo = ["hostname", "ip", "os", "kernel", "shell", "resolution", "cpu", "gpu", "ram", "disk"];
+const systemInfo = ["hostname", "ip", "os", "kernel", "shell", "resolution", "cpu", "cpu_dynamic", "gpu", "gpu_dynamic", "ram", "ram_dynamic", "disk", "disk_dynamic"];
 const customSystemInfoValues = 11;
 
 let currentMediaThumbnail = "";
@@ -102,13 +107,16 @@ function waitForUptimeElement() {
 
 async function updateLiveHardware() {
     try {
-		const response = await fetch('http://127.0.0.1:5000/performance');
+		const response = await fetch(`http://127.0.0.1:5000/performance`);
         const data = await response.json();
         if (!data || !data.hwinfo) return;
 
 		const hw = data.hwinfo.reduce((acc, curr) => { acc[curr.label] = curr.value; return acc; }, {});
-		const hwColor = data.hwinfo.reduce((acc, curr) => { acc[curr.label] = curr.color; return acc; }, {});
-        const ps = data.psutil || {};
+		
+		// preparation for specs color coding
+		// const hwColor = data.hwinfo.reduce((acc, curr) => { acc[curr.label] = curr.color; return acc; }, {});
+        
+		const ps = data.psutil || {};
 
 		let cpuName = "Unknown CPU";
         const cpuSensor = data.hwinfo.find(i => i.sensor && i.sensor.includes("CPU [#"));
@@ -117,6 +125,41 @@ async function updateLiveHardware() {
         let gpuName = "Unknown GPU";
         const gpuSensor = data.hwinfo.find(i => i.sensor && (i.sensor.includes("dGPU [#") || i.sensor.includes("GPU [#")));
         if (gpuSensor) gpuName = gpuSensor.sensor.split(": ")[1] || gpuName;
+
+		if (userSettings.systemInfo.cpu_dynamic) {
+            document.querySelector(".cpu_property").textContent = "CPU:";
+            document.querySelector(".cpu").textContent = cpuName;
+            
+            document.querySelector(".stat-cpu-load").textContent = hw["Total CPU Usage"] || "0 %";
+            document.querySelector(".stat-cpu-temp").textContent = hw["CPU Package"] || "0 °C";
+            document.querySelector(".cpu-stats").classList.remove("hidden");
+        }
+
+        if (userSettings.systemInfo.gpu_dynamic) {
+            document.querySelector(".gpu_property").textContent = "GPU:";
+            document.querySelector(".gpu").textContent = gpuName;
+            
+            document.querySelector(".stat-gpu-load").textContent = hw["GPU D3D Usage"] || "0 %";
+            document.querySelector(".stat-gpu-temp").textContent = hw["GPU Temperature"] || "0 °C";
+
+			let vram = ps.vram_gb.split("/");
+            document.querySelector(".stat-gpu-vram").textContent = vram[0] + " / " + vram[1] || "? GB / ? GB";
+            document.querySelector(".gpu-stats").classList.remove("hidden");
+        }
+
+        if (userSettings.systemInfo.ram_dynamic) {
+            document.querySelector(".ram_property").textContent = "RAM:";
+            document.querySelector(".stat-ram-load").textContent = hw["Physical Memory Load"] || "0 %";
+
+			let mem = ps.memory_gb.split("/");
+            document.querySelector(".ram").textContent = mem[0] + " / " + mem[1] || "? GB / ? GB";
+            document.querySelector(".ram-stats").classList.remove("hidden");
+        }
+
+        if (userSettings.systemInfo.disk_dynamic) {
+            document.querySelector(".disk_property").textContent = "Disk (C:):";
+            document.querySelector(".disk").textContent = ps.c_disk || "? GB / ? GB";
+        }
 	} 
 	catch (e) {
 		}
@@ -134,8 +177,12 @@ window.wallpaperPropertyListener = {
 		if (initialLoad === true) {
 			systemInfo.forEach((entry) => {
 				if (!entry) return;
+
 				userSettings.systemInfo[entry] = properties[entry].value;
-				userSettings.systemInfo[`${entry}_property`] = properties[`${entry}_property`].value;
+				
+				if (properties[`${entry}_property`]) {
+					userSettings.systemInfo[`${entry}_property`] = properties[`${entry}_property`].value;
+				}
 			});
 
 			updateSystem();
@@ -675,7 +722,7 @@ function updateClocks() {
 		let date;
 		const userOffset = userSettings.times[id].timezone;
 
-		if (userOffset === '{now}') {
+		if (userOffset === `{now}`) {
 			date = new Date(now);
 		} else {
 			const utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
@@ -852,12 +899,30 @@ function showInvalid(element, label) {
 }
 
 function updateSystem() {
+	const grids = document.querySelectorAll(".stats-grid");
+    if (grids) grids.forEach(grid => grid.classList.add("hidden"));
+	
 	Object.keys(userSettings.systemInfo).forEach((entry) => {
+		if (entry.includes("_")) return;
+
+		if (userSettings.systemInfo[`${entry}_dynamic`] === true) return;
+
 		const element = document.querySelector(`.${entry}`);
+		const propElement = document.querySelector(`.${entry}_property`);
+
+		if (!element) return;
+
 		const value = userSettings.systemInfo[entry];
 
-		if (value === "{resolution}") element.textContent = `${document.body.scrollWidth}x${document.body.scrollHeight}`;
-		else element.textContent = value;
+		if (value === "{resolution}") {
+			element.textContent = `${document.body.scrollWidth}x${document.body.scrollHeight}`;
+		} else {
+			element.textContent = value;
+		}
+
+		if (propElement && userSettings.systemInfo[`${entry}_property`]) {
+			propElement.textContent = userSettings.systemInfo[`${entry}_property`];
+		}
 	});
 
 	for (let i = 1; i <= customSystemInfoValues; i++) {

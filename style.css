@@ -201,4 +201,16 @@ body.right {
 .uptime-panel.bottom {
   justify-content: flex-end;
 }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 0.2ch 2ch;
+  margin-left: 4ch;
+  margin-top: 0.5ch;
+  margin-bottom: 1ch;
+}
+.stats-grid.hidden {
+  display: none !important;
+}
 /*# sourceMappingURL=style.css.map */

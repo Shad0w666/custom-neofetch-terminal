@@ -278,21 +278,41 @@
 
 						<div class="separator separator-2"></div>
 
-						<div class="block">
-							<p class="cpu_property ansi-bright-green">CPU:</p>
-							<p class="cpu ansi-green"></p>
+						<div class="hw-container flex f-col">
+							<div class="block">
+								<p class="cpu_property ansi-bright-green">CPU:</p>
+								<p class="cpu ansi-green"></p>
+							</div>
+							<div class="cpu-stats stats-grid hidden ansi-bright-black">
+								<p class="stat-label">Load:</p> <p class="stat-value stat-cpu-load"></p>
+								<p class="stat-label">Temp:</p> <p class="stat-value stat-cpu-temp"></p>
+							</div>
 						</div>
-						<div class="block">
-							<p class="gpu_property ansi-bright-green">GPU:</p>
-							<p class="gpu ansi-green"></p>
+						<div class="hw-container flex f-col">
+							<div class="block">
+								<p class="gpu_property ansi-bright-green">GPU:</p>
+								<p class="gpu ansi-green"></p>
+							</div>
+							<div class="gpu-stats stats-grid hidden ansi-bright-black">
+								<p class="stat-label">Load:</p>  <p class="stat-value stat-gpu-load"></p>
+								<p class="stat-label">Temp:</p>  <p class="stat-value stat-gpu-temp"></p>
+								<p class="stat-label">VRAM:</p>  <p class="stat-value stat-gpu-vram"></p>
+							</div>
 						</div>
-						<div class="block">
-							<p class="ram_property ansi-bright-green">RAM:</p>
-							<p class="ram ansi-green"></p>
+						<div class="hw-container flex f-col">
+							<div class="block">
+								<p class="ram_property ansi-bright-green">RAM:</p>
+								<p class="ram ansi-green"></p>
+							</div>
+							<div class="ram-stats stats-grid hidden ansi-bright-black">
+								<p class="stat-label">Load:</p> <p class="stat-ram-load stat-value"></p>
+							</div>
 						</div>
-						<div class="block">
-							<p class="disk_property ansi-bright-green">Disk:</p>
-							<p class="disk ansi-green"></p>
+						<div class="hw-container flex f-col">
+							<div class="block">
+								<p class="disk_property ansi-bright-green">Disk:</p>
+								<p class="disk ansi-green"></p>
+							</div>
 						</div>
 
 						<div class="separator separator-3"></div>
