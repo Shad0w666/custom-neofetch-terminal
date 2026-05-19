@@ -103,6 +103,10 @@ function waitForUptimeElement() {
 		updateDate();
 		updateLiveHardware();
 	}, 1000);
+
+	setInterval(() => {
+		updateMediaVisuals();
+	}, 250);
 }
 
 async function updateLiveHardware() {
@@ -901,7 +905,7 @@ function showInvalid(element, label) {
 function updateSystem() {
 	const grids = document.querySelectorAll(".stats-grid");
     if (grids) grids.forEach(grid => grid.classList.add("hidden"));
-	
+
 	Object.keys(userSettings.systemInfo).forEach((entry) => {
 		if (entry.includes("_")) return;
 
@@ -1048,6 +1052,11 @@ function wallpaperMediaPropertiesListener(event) {
 window.wallpaperRegisterMediaPropertiesListener(wallpaperMediaPropertiesListener);
 
 const BAR_LEN = 100;
+let mediaDuration = 0;
+let mediaPosition = 0;
+let mediaLastSyncTime = Date.now();
+let mediaIsPlaying = false;
+
 function buildSeekbar(position, duration) {
 	if (!Number.isFinite(duration) || duration <= 0) {
 		return ">".padEnd(BAR_LEN, "-");
@@ -1062,14 +1071,49 @@ function buildSeekbar(position, duration) {
 	return left + ">" + right;
 }
 
+function updateMediaVisuals() {
+    let currentPosition = mediaPosition;
+
+    if (mediaIsPlaying) {
+        const elapsedSeconds = (Date.now() - mediaLastSyncTime) / 1000;
+        currentPosition += elapsedSeconds;
+
+        if (mediaDuration > 0 && currentPosition > mediaDuration) {
+            currentPosition = mediaDuration;
+        }
+    }
+
+	const displayPosition = Math.floor(currentPosition);
+    const displayDuration = Math.floor(mediaDuration);
+
+    document.querySelector(".currentTime").textContent = formatTime(displayPosition);
+    document.querySelector(".playing-song .time").textContent = `[${formatTime(displayPosition)}/${formatTime(displayDuration)}]`;
+    document.querySelector(".seekbar").textContent = buildSeekbar(currentPosition, mediaDuration);
+}
+
 function wallpaperMediaTimelineListener(event) {
-	const duration = event.duration;
-	const position = event.position;
+	const newDuration = event.duration || 0;
+	const newPosition = event.position || 0;
+	
+	let localPosition = mediaPosition;
+	if (mediaIsPlaying) {
+		localPosition += (Date.now() - mediaLastSyncTime) / 1000;
+	}
 
-	document.querySelector(".currentTime").textContent = formatTime(position);
-	document.querySelector(".playing-song .time").textContent = `[${formatTime(position)}/${formatTime(duration)}]`;
+	const diff = newPosition - localPosition;
 
-	document.querySelector(".seekbar").textContent = buildSeekbar(position, duration);
+	if (Math.abs(diff) > 2 || newDuration !== mediaDuration) {
+		mediaPosition = newPosition;
+		mediaDuration = newDuration;
+	}
+
+	else {
+		mediaPosition = localPosition + (diff * 0.1);
+	}
+
+	mediaLastSyncTime = Date.now();
+
+	updateMediaVisuals();
 }
 
 window.wallpaperRegisterMediaTimelineListener(wallpaperMediaTimelineListener);
@@ -1077,11 +1121,16 @@ window.wallpaperRegisterMediaTimelineListener(wallpaperMediaTimelineListener);
 function wallpaperMediaPlaybackListener(event) {
 	const element = document.querySelector(".playing-song .status");
 
-	if (event.state !== window.wallpaperMediaIntegration.PLAYBACK_PLAYING) {
+	mediaIsPlaying = (event.state === window.wallpaperMediaIntegration.PLAYBACK_PLAYING);
+
+	if (!mediaIsPlaying) {
 		element.textContent = "Idle:";
 	} else {
 		element.textContent = "Playing:";
+		mediaLastSyncTime = Date.now();
 	}
+
+	updateMediaVisuals();
 }
 window.wallpaperRegisterMediaPlaybackListener(wallpaperMediaPlaybackListener);
 
